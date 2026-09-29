@@ -4,6 +4,9 @@
 
 PsyFusion AI is a research oriented AI-assisted platform designed to combine multiple complementary sources of mental-health information to support screening, risk assessment, longitudinal monitoring, and professional review.
 
+we are conducting a survey to work on the project in a better way and improvise it according to the end user and practitioners requirement rather than just Building some slop.so kindly fill out this form : https://link.jotform.com/Y5TbokfZDJ
+
+
 The platform explores the integration of:
 
 • Validated mental health questionnaires
