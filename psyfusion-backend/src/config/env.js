@@ -18,7 +18,7 @@ const env = {
   JWT_REFRESH_EXPIRES_IN: process.env.JWT_REFRESH_EXPIRES_IN || '7d',
   COOKIE_SECRET: required('COOKIE_SECRET'),
   COOKIE_DOMAIN: process.env.COOKIE_DOMAIN || 'localhost',
-  CORS_ORIGINS: (process.env.CORS_ORIGINS || 'http://localhost:3000')
+  CORS_ORIGINS: (process.env.CORS_ORIGINS || 'http://localhost:5173')
     .split(',')
     .map((s) => s.trim())
     .filter(Boolean),

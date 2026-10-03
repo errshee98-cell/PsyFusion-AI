@@ -165,7 +165,7 @@ In `.env`, generate each secret separately:
 node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
 ```
 
-Set `ML_SERVICE_API_KEY` to the same value used for the ML service, and set `CORS_ORIGINS=http://localhost:5173` so the frontend can reach the API.
+Set `ML_SERVICE_API_KEY` to the same value used for the ML service, `CORS_ORIGINS` already defaults to `http://localhost:5173` (the frontend dev server); add any other origins as a comma-separated list.
 
 ### 3. Frontend
 

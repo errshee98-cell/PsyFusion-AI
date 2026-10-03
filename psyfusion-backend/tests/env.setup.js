@@ -7,7 +7,7 @@ process.env.JWT_ACCESS_SECRET = 'test-access-secret-not-for-real-use';
 process.env.JWT_REFRESH_SECRET = 'test-refresh-secret-not-for-real-use';
 process.env.MFA_CHALLENGE_SECRET = 'test-mfa-challenge-secret-not-for-real-use';
 process.env.COOKIE_SECRET = 'test-cookie-secret';
-process.env.CORS_ORIGINS = 'http://localhost:3000';
+process.env.CORS_ORIGINS = 'http://localhost:5173';
 process.env.MAX_LOGIN_ATTEMPTS = '3'; // small, so the lockout test doesn't need 5 requests
 process.env.LOCKOUT_DURATION_MINUTES = '15';
 
