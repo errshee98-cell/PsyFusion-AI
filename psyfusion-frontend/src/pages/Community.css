@@ -1,0 +1,119 @@
+.community {
+  padding: var(--space-6) var(--space-5) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.community__title {
+  font-size: var(--text-xl);
+}
+
+.community__subtitle {
+  font-size: var(--text-xs);
+  color: var(--color-ink-muted);
+  margin-top: 4px;
+}
+
+.community__textarea {
+  width: 100%;
+  border: none;
+  background: transparent;
+  resize: none;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+  line-height: 1.5;
+}
+
+.community__textarea:focus {
+  outline: none;
+}
+
+.community__textarea::placeholder {
+  color: var(--color-ink-faint);
+}
+
+.community__composer-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-3);
+}
+
+.community__char-count {
+  font-size: var(--text-xs);
+  color: var(--color-ink-faint);
+}
+
+.community__notice {
+  margin-top: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-violet-deep);
+  background: var(--color-violet-tint);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+}
+
+.community__notice--crisis {
+  color: var(--color-coral-deep);
+  background: var(--color-coral-tint);
+}
+
+.community__error {
+  margin-top: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-coral-deep);
+}
+
+.community__empty {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-ink-faint);
+  padding: var(--space-6) 0;
+}
+
+.community__feed {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.community__post-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-xs);
+}
+
+.community__handle {
+  font-weight: 700;
+  color: var(--color-violet-deep);
+}
+
+.community__dot,
+.community__time {
+  color: var(--color-ink-faint);
+}
+
+.community__body {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.community__reply-btn {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin-top: var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-ink-muted);
+  cursor: pointer;
+}
+
+.community__reply-btn:hover {
+  color: var(--color-violet-deep);
+}

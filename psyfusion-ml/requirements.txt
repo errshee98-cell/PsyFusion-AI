@@ -1,0 +1,36 @@
+# Core (used by this repo as built, in the sandboxed build environment)
+numpy>=1.26
+pandas>=2.0
+scikit-learn>=1.4
+matplotlib>=3.8
+joblib>=1.3
+
+# Real audio feature extraction (not available in the build environment -
+# required to use preprocessing/audio_features.py on real .wav files)
+librosa>=0.10
+
+# Face detection / video frame handling (cv2 WAS available in the build
+# environment, but with a minimal build missing objdetect/CascadeClassifier -
+# a standard install below has it; face_features.py falls back gracefully
+# if it's ever missing again)
+opencv-python>=4.9
+
+# Optional upgrades - swap into text_preprocessing.py / unimodal.py once
+# your team has internet + GPU access and wants to move past the TF-IDF
+# baseline:
+# torch>=2.2
+# transformers>=4.38
+# nltk>=3.8
+
+# For serving inference.py behind an HTTP endpoint the Node backend can call.
+# FastAPI/uvicorn is the recommended production choice (async, pydantic
+# validation, auto docs) but is NOT installed in the sandboxed build
+# environment (pypi was unreachable), so service/app.py was built and
+# verified against Flask instead, which WAS available. Both are listed below
+# - install whichever your team actually deploys with. Swapping Flask for
+# FastAPI later only touches service/app.py.
+flask>=3.0
+# fastapi>=0.110
+# uvicorn>=0.29
+
+pyyaml>=6.0

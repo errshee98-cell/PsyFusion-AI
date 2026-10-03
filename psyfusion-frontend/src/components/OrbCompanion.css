@@ -1,0 +1,102 @@
+.orb-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orb {
+  position: relative;
+  border-radius: 61% 39% 54% 46% / 45% 51% 49% 55%;
+  animation:
+    orb-morph 11s ease-in-out infinite,
+    orb-breathe 5s ease-in-out infinite;
+  box-shadow:
+    0 20px 45px -12px rgba(110, 93, 231, 0.45),
+    inset -14px -18px 30px rgba(0, 0, 0, 0.12),
+    inset 10px 12px 24px rgba(255, 255, 255, 0.35);
+}
+
+.orb--calm {
+  background: radial-gradient(circle at 32% 28%, #a99bff 0%, #6e5de7 48%, #4f3fc4 100%);
+}
+
+.orb--listening {
+  background: radial-gradient(circle at 32% 28%, #ffd0b0 0%, #ff9b71 48%, #f17a47 100%);
+  animation-duration: 3.2s, 2.4s; /* quicker, more attentive pulse */
+}
+
+.orb--warm {
+  background: radial-gradient(circle at 32% 28%, #ffcf9e 0%, #ff9b71 45%, #e8a53d 100%);
+}
+
+.orb--grounded {
+  background: radial-gradient(circle at 32% 28%, #a6e8cb 0%, #4fb286 50%, #2f8f68 100%);
+}
+
+.orb__highlight {
+  position: absolute;
+  top: 16%;
+  left: 20%;
+  width: 30%;
+  height: 22%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  filter: blur(6px);
+}
+
+.orb__ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(110, 93, 231, 0.18);
+  animation: orb-ring-spin 24s linear infinite;
+}
+
+.orb__label {
+  position: absolute;
+  bottom: -28px;
+  font-size: var(--text-sm);
+  color: var(--color-ink-muted);
+  white-space: nowrap;
+}
+
+@keyframes orb-morph {
+  0%,
+  100% {
+    border-radius: 61% 39% 54% 46% / 45% 51% 49% 55%;
+  }
+  33% {
+    border-radius: 48% 52% 41% 59% / 58% 44% 56% 42%;
+  }
+  66% {
+    border-radius: 55% 45% 60% 40% / 40% 58% 42% 60%;
+  }
+}
+
+@keyframes orb-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.045);
+  }
+}
+
+@keyframes orb-ring-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb {
+    animation: none;
+  }
+  .orb__ring {
+    animation: none;
+  }
+}

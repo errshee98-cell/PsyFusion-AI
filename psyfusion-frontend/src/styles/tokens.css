@@ -1,0 +1,163 @@
+/*
+  PsyFusion AI — design tokens.
+
+  Palette concept: "dusk" — a calm, slightly violet evening-sky base rather
+  than a clinical white or a saccharine pastel wellness-app look. Warm coral
+  is used sparingly (primary actions, the companion orb) so it stays an
+  accent, not a theme. Sage marks positive/grounding states (low risk,
+  completed check-ins) without leaning on a generic "success green".
+
+  Radii are deliberately NOT uniform across components - see the --radius-*
+  scale below. A hero element (the orb card) gets a large, organic radius;
+  list rows get a small one. Sameness-of-radius is what makes soft-UI read
+  as a generic card kit.
+*/
+
+:root {
+  /* Color */
+  --color-bg: #f6f4fb;
+  --color-bg-deep: #ece7f9;
+  --color-surface: #ffffff;
+  --color-ink: #262042;
+  --color-ink-muted: #645d82;
+  --color-ink-faint: #9a93b8;
+
+  --color-violet: #6e5de7;
+  --color-violet-deep: #4f3fc4;
+  --color-violet-tint: #efebfd;
+
+  --color-coral: #ff9b71;
+  --color-coral-deep: #f17a47;
+  --color-coral-tint: #ffe9de;
+
+  --color-sage: #4fb286;
+  --color-sage-tint: #e2f4ec;
+
+  --color-amber: #e8a53d;
+  --color-amber-tint: #fbf0dc;
+
+  /* Shadow - two-tone, soft neumorphic depth */
+  --shadow-soft:
+    0 1px 2px rgba(38, 32, 66, 0.04),
+    0 8px 24px rgba(110, 93, 231, 0.12);
+  --shadow-soft-lg:
+    0 2px 4px rgba(38, 32, 66, 0.05),
+    0 16px 40px rgba(110, 93, 231, 0.16);
+  --shadow-inset: inset 0 1px 2px rgba(38, 32, 66, 0.06);
+
+  /* Radius scale - intentionally varied, not one value reused everywhere */
+  --radius-sm: 14px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 40px;
+  --radius-pill: 999px;
+
+  /* Type */
+  --font-display: 'Fraunces', 'Iowan Old Style', serif;
+  --font-body: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+
+  /* Spacing (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* App shell */
+  --app-max-width: 430px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-bg: #15122a;
+    --color-bg-deep: #1d1938;
+    --color-surface: #221d3f;
+    --color-ink: #f1eefb;
+    --color-ink-muted: #b4acd6;
+    --color-ink-faint: #756c99;
+
+    --color-violet-tint: #2c2555;
+    --color-coral-tint: #3a2a2e;
+    --color-sage-tint: #1f332b;
+    --color-amber-tint: #332c1c;
+
+    --shadow-soft:
+      0 1px 2px rgba(0, 0, 0, 0.3),
+      0 8px 24px rgba(0, 0, 0, 0.35);
+    --shadow-soft-lg:
+      0 2px 4px rgba(0, 0, 0, 0.3),
+      0 16px 40px rgba(0, 0, 0, 0.4);
+    --shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+}
+
+:root[data-theme='dark'] {
+  --color-bg: #15122a;
+  --color-bg-deep: #1d1938;
+  --color-surface: #221d3f;
+  --color-ink: #f1eefb;
+  --color-ink-muted: #b4acd6;
+  --color-ink-faint: #756c99;
+  --color-violet-tint: #2c2555;
+  --color-coral-tint: #3a2a2e;
+  --color-sage-tint: #1f332b;
+  --color-amber-tint: #332c1c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+button {
+  font-family: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

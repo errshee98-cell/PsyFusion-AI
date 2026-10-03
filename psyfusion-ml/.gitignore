@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+data/raw/*
+!data/raw/.gitkeep
+artifacts/*.joblib
+artifacts/*.png
+artifacts/metrics.json
+*.egg-info/
+
+.env
+.env.*
+!.env.example

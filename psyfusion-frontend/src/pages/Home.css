@@ -1,0 +1,82 @@
+.home {
+  padding: var(--space-6) var(--space-5) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.home__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home__eyebrow {
+  font-size: var(--text-sm);
+  color: var(--color-ink-muted);
+}
+
+.home__name {
+  font-size: var(--text-xl);
+  margin-top: 2px;
+}
+
+.home__checkin {
+  padding-bottom: var(--space-8);
+}
+
+.home__checkin-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: var(--space-5);
+}
+
+.home__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.home__tile {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.home__tile-emoji {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.home__tile-title {
+  font-weight: 700;
+  font-size: var(--text-base);
+}
+
+.home__tile-sub {
+  font-size: var(--text-xs);
+  color: var(--color-ink-muted);
+  line-height: 1.4;
+}
+
+.home__streak {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home__streak-title {
+  font-weight: 700;
+  font-size: var(--text-sm);
+}
+
+.home__streak-sub {
+  font-size: var(--text-xs);
+  color: var(--color-ink-muted);
+  margin-top: 2px;
+}
+
+.home__streak-badge {
+  font-size: 24px;
+}

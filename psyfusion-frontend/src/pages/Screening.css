@@ -1,0 +1,132 @@
+/* Fills whatever height .app-content (the scroll container) gives it,
+   rather than computing its own viewport-relative height - avoids fighting
+   the parent's own scroll/padding math. */
+.screening {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.screening__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border-bottom: 1px solid var(--color-bg-deep);
+}
+
+.screening__header-title {
+  font-weight: 700;
+  font-size: var(--text-sm);
+}
+
+.screening__header-sub {
+  font-size: var(--text-xs);
+  color: var(--color-ink-faint);
+  margin-top: 2px;
+}
+
+.screening__thread {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.screening__bubble-row {
+  display: flex;
+}
+
+.screening__bubble-row--orb {
+  justify-content: flex-start;
+}
+
+.screening__bubble-row--user {
+  justify-content: flex-end;
+}
+
+.screening__bubble {
+  max-width: 78%;
+  padding: 12px 16px;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.screening__bubble--orb {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  border-radius: 18px 18px 18px 4px;
+  box-shadow: var(--shadow-soft);
+}
+
+.screening__bubble--user {
+  background: linear-gradient(135deg, var(--color-violet) 0%, var(--color-violet-deep) 100%);
+  color: #ffffff;
+  border-radius: 18px 18px 4px 18px;
+}
+
+.screening__bubble--pending {
+  color: var(--color-ink-faint);
+  font-style: italic;
+}
+
+/* Crisis-resource messages (imminent/elevated signal detected) use the
+   coral accent so they're visually distinct from an ordinary reply without
+   looking alarmist (no red, no bold warning chrome). */
+.screening__bubble--crisis {
+  background: var(--color-coral-tint);
+  border-left: 3px solid var(--color-coral);
+}
+
+/* A softer variant for "flagged for clinician review" states that aren't
+   an acute crisis signal. */
+.screening__bubble--review {
+  background: var(--color-amber-tint);
+  border-left: 3px solid var(--color-amber);
+}
+
+.screening__composer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-bg-deep);
+}
+
+.screening__input {
+  flex: 1;
+  border: none;
+  background: var(--color-bg-deep);
+  border-radius: var(--radius-pill);
+  padding: 12px 18px;
+  font-size: var(--text-sm);
+  font-family: var(--font-body);
+  color: var(--color-ink);
+}
+
+.screening__input:focus {
+  outline: 2px solid var(--color-violet);
+  outline-offset: 2px;
+}
+
+.screening__send {
+  appearance: none;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-violet);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.screening__send:active {
+  transform: scale(0.95);
+}

@@ -1,0 +1,32 @@
+/* App shell: a phone-width frame centered on larger viewports, with a soft
+   bottom nav. On an actual phone this just fills the screen. */
+
+.app-shell {
+  max-width: var(--app-max-width);
+  margin: 0 auto;
+  height: 100dvh; /* definite height, not min-height - lets flex children
+                     (and percentage-height descendants like .screening)
+                     resolve against it predictably */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: var(--color-bg);
+}
+
+.app-content {
+  flex: 1;
+  min-height: 0; /* without this, a flex child won't shrink below its content
+                    size, which breaks overflow-y: auto scrolling */
+  overflow-y: auto;
+  padding-bottom: 88px; /* clears the bottom nav */
+}
+
+@media (min-width: 431px) {
+  .app-shell {
+    height: 92dvh;
+    margin-top: 4dvh;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-soft-lg);
+    overflow: hidden;
+  }
+}

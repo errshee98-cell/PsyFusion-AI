@@ -1,0 +1,19 @@
+dataset_configs:
+  text:
+    - loader: sdcnl
+      path: data/raw/sdcnl.csv
+    - loader: dreaddit
+      path: data/raw/dreaddit.csv
+
+  daic_woz_dir: data/raw/daic_woz
+
+training:
+  test_size: 0.2
+  seed: 42
+
+fusion:
+  text_weight: 0.5
+  audio_weight: 0.5
+  abstain_lower: 0.40
+  abstain_upper: 0.60
+  conflict_threshold: 0.35
